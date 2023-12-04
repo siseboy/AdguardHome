@@ -34,7 +34,7 @@ jobs:
       - name: Step 4 - Delete previous workflow runs
         uses: Mattraks/delete-workflow-runs@v2.0.5
         with:
-          token: ${{ secrets.AGH_TOKEN }}
+          token: ${{ github.token }}
           repository: ${{ github.repository }}
           retain_days: 1
           keep_minimum_runs: 3
