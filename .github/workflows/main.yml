@@ -2,7 +2,7 @@ name: Build & Release AdguardHome
 
 on:
   schedule:
-    - cron: "0 1 * * *"
+    - cron: 10 1 * * *
   watch:
     types: [started]
   repository_dispatch:
