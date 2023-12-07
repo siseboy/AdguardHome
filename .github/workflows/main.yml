@@ -1,10 +1,10 @@
 name: Build & Release AdguardHome
 
 on:
-  #push:
-  #  branches: [main]
+  push:
+    branches: [main]
   schedule:
-    - cron: "40 01 * * *"
+    - cron: "50 01 * * *"
   watch:
     types: [started]
   repository_dispatch:
