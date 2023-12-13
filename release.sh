@@ -107,8 +107,7 @@ function GenerateRules() {
     case ${software_name} in
         adguardhome)
             domestic_dns=(
-                "h3://223.5.5.5/dns-query"
-		"quic://223.5.5.5"
+                "https://223.5.5.5/dns-query"
 		# "https://1.12.12.12/dns-query"
                 # "https://dns.alidns.com:443/dns-query"
                 # "https://dns.ipv6dns.com:443/dns-query"
@@ -120,7 +119,7 @@ function GenerateRules() {
                 # "tls://dot.pub:853"
             )
             foreign_dns=(
-                "h3://1.1.1.1/dns-query"
+                "https://1.1.1.1/dns-query"
                 # "tls://1.1.1.1:853"
                 # "https://dns.google:443/dns-query"
                 # "https://dns.opendns.com:443/dns-query"
