@@ -108,7 +108,7 @@ function GenerateRules() {
         adguardhome)
             domestic_dns=(
                 "https://223.5.5.5/dns-query"
-		# "https://1.12.12.12/dns-query"
+		"https://1.12.12.12/dns-query"
                 # "https://dns.alidns.com:443/dns-query"
                 # "https://dns.ipv6dns.com:443/dns-query"
                 # "https://doh.360.cn:443/dns-query"
