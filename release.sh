@@ -151,9 +151,9 @@ function GenerateRules() {
                 if [ "${dns_mode}" == "default" ]; then
                     echo -e "]#" >> "${file_path}"
                 elif [ "${dns_mode}" == "domestic" ]; then
-                    echo -e "]${domestic_dns[domestic_dns_task]}" >> "${file_path}"
+                    echo -e "]${domestic_dns[*]}" >> "${file_path}"
                 elif [ "${dns_mode}" == "foreign" ]; then
-                    echo -e "]${foreign_dns[foreign_dns_task]}" >> "${file_path}"
+                    echo -e "]${foreign_dns[*]}" >> "${file_path}"
                 fi
             }
             function GenerateRulesProcess() {
@@ -164,13 +164,9 @@ function GenerateRules() {
             if [ "${dns_mode}" == "default" ]; then
                 FileName && GenerateDefaultUpstream && GenerateRulesProcess
             elif [ "${dns_mode}" == "domestic" ]; then
-                FileName && GenerateDefaultUpstream && for domestic_dns_task in "${!domestic_dns[@]}"; do
-                    GenerateRulesProcess
-                done
+                FileName && GenerateDefaultUpstream && GenerateRulesProcess
             elif [ "${dns_mode}" == "foreign" ]; then
-                FileName && GenerateDefaultUpstream && for foreign_dns_task in "${!foreign_dns[@]}"; do
-                   GenerateRulesProcess
-                done
+                FileName && GenerateDefaultUpstream && GenerateRulesProcess
             fi
         ;;
         *)
