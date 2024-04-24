@@ -113,22 +113,13 @@ function GenerateRules() {
                 # "https://dns.ipv6dns.com:443/dns-query"
                 # "https://doh.360.cn:443/dns-query"
                 # "https://doh.pub:443/dns-query"
-                # "tls://dns.alidns.com:853"
-                # "tls://dns.ipv6dns.com:853"
-                # "tls://dot.360.cn:853"
-                # "tls://dot.pub:853"
             )
             foreign_dns=(
                 "https://1.1.1.1/dns-query"
-                # "tls://1.1.1.1:853"
-                # "https://dns.google:443/dns-query"
+                "https://8.8.8.8/dns-query"
                 # "https://dns.opendns.com:443/dns-query"
                 # "https://dns11.quad9.net:443/dns-query"
                 # "https://cloudflare-dns.com:443/dns-query"
-                # "tls://dns.google:853"
-                # "tls://dns.opendns.com:853"
-                # "tls://dns11.quad9.net:853"
-                # "tls://dns64.dns.google:853"
             )
             function GenerateRulesHeader() {
                 echo -n "[/" >> "${file_path}"
