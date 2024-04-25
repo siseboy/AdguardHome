@@ -116,10 +116,10 @@ function GenerateRules() {
             )
             foreign_dns=(
                 "https://1.1.1.1/dns-query"
-                "https://8.8.8.8/dns-query"
+                "https://101.101.101.101/dns-query"
+                # "https://8.8.8.8/dns-query"
                 # "https://dns.opendns.com:443/dns-query"
                 # "https://dns11.quad9.net:443/dns-query"
-                # "https://cloudflare-dns.com:443/dns-query"
             )
             function GenerateRulesHeader() {
                 echo -n "[/" >> "${file_path}"
