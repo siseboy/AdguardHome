@@ -115,7 +115,7 @@ function GenerateRules() {
                 # "https://doh.pub:443/dns-query"
             )
             foreign_dns=(
-                "h3://1.1.1.1/dns-query"
+                "https://1.1.1.1/dns-query"
                 "https://101.101.101.101/dns-query"
                 # "https://8.8.8.8/dns-query"
                 # "https://dns.opendns.com:443/dns-query"
