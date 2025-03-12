@@ -185,4 +185,5 @@
 # 支付宝
 (@%!)mobilegw.alipay.com
 
+(@&!)hdhive.online
 ## 自定义规则 - 结束
