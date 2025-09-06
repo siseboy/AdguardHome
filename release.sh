@@ -34,7 +34,7 @@ function GetData() {
     gfwlist2agh_modify=(
         "https://raw.githubusercontent.com/siseboy/AdguardHome/source/data/data_modify.txt"
     )
-    rm -rf ./gfwlist2* ./Temp && mkdir ./Temp && cd ./Temp
+    rm -rf ./*.txt ./Temp && mkdir ./Temp && cd ./Temp
     for cnacc_domain_task in "${!cnacc_domain[@]}"; do
         curl -s --connect-timeout 15 "${cnacc_domain[$cnacc_domain_task]}" | sed "s/^\.//g" >> ./cnacc_domain.tmp
     done
@@ -194,7 +194,7 @@ function GenerateRules() {
                 "https://8.8.8.8/dns-query"
             )
             function GenerateRulesHeader() {
-                echo -n "[/" > "${file_path}"
+                echo -n "[/" >> "${file_path}"
             }
             function GenerateRulesBody() {
                 if [ "${generate_mode}" == "full" ] || [ "${generate_mode}" == "full_combine" ]; then
