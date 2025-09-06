@@ -117,6 +117,18 @@
 # Cloudflare Workers
 (@&!)workers.dev
 
+# hellotalk
+(@&!)hellotalk.com
+
+# privacyredirect.com
+(@&!)privacyredirect.com
+
+# jing.rocks
+(@&!)jing.rocks
+
+# slate.com
+(@&!)slate.com
+
 # DNSPod
 (@%!)dns.pub
 (@%!)doh.pub
@@ -168,6 +180,12 @@
 # UUP dump
 (@&!)uupdump.net
 
+# cityline
+(@&!)cityline.com
+
+# hardwarezone.com.sg
+(@&!)hardwarezone.com.sg
+
 # sol-ict.com #8
 (@%!)global-idc.net
 (@%!)global-idt.net
@@ -185,5 +203,14 @@
 # 支付宝
 (@%!)mobilegw.alipay.com
 
+# Manual
+(@&!)jotform.com
+(@&!)froth.zone
+(@&!)adminforge.de
+(@&!)funami.tech
+(@&!)r4fo.com
+(@%!)xssx.win
+(@%!)b-b.win
+(@%!)it-global.xyz
 (@&!)hdhive.online
 ## 自定义规则 - 结束
