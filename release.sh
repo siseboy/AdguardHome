@@ -137,6 +137,7 @@ BEGIN {
     print best_match
 }' "./lite_gfwlist_data.tmp" | sort | uniq))
 }
+# Generate Rules
 function GenerateRules() {
     function FileName() {
         if [ "${generate_file}" == "black" ] || [ "${generate_file}" == "whiteblack" ]; then
@@ -146,14 +147,9 @@ function GenerateRules() {
         else
             generate_temp="debug"
         fi
-        if [ "${software_name}" == "adguardhome" ] || [ "${software_name}" == "adguardhome_new" ] || [ "${software_name}" == "domain" ]; then
+        if [ "${software_name}" == "adguardhome" ] ; then
             file_extension="txt"
-        elif [ "${software_name}" == "bind9" ] || [ "${software_name}" == "dnsmasq" ] || [ "${software_name}" == "smartdns" ] || [ "${software_name}" == "unbound" ]; then
-            file_extension="conf"
-        else
-            file_extension="dev"
         fi
-
         file_name="${generate_temp}list_${generate_mode}.${file_extension}"
         file_path="../${file_name}"
     }
@@ -227,9 +223,9 @@ function GenerateRules() {
                 if [ "${dns_mode}" == "default" ]; then
                     echo -e "]#" >> "${file_path}"
                 elif [ "${dns_mode}" == "domestic" ]; then
-                    echo -e "]${domestic_dns[domestic_dns_task]}" >> "${file_path}"
+                    echo -e "]${domestic_dns[*]}" >> "${file_path}"
                 elif [ "${dns_mode}" == "foreign" ]; then
-                    echo -e "]${foreign_dns[foreign_dns_task]}" >> "${file_path}"
+                    echo -e "]${foreign_dns[*]}" >> "${file_path}"
                 fi
             }
             function GenerateRulesProcess() {
@@ -240,9 +236,9 @@ function GenerateRules() {
             if [ "${dns_mode}" == "default" ]; then
                 FileName && GenerateDefaultUpstream && GenerateRulesProcess
             elif [ "${dns_mode}" == "domestic" ]; then
-                FileName && GenerateDefaultUpstream && domestic_dns_task=0 && GenerateRulesProcess
+                FileName && GenerateDefaultUpstream && GenerateRulesProcess
             elif [ "${dns_mode}" == "foreign" ]; then
-                FileName && GenerateDefaultUpstream && foreign_dns_task=0 && GenerateRulesProcess
+                FileName && GenerateDefaultUpstream && GenerateRulesProcess
             fi
         ;;
         *)
