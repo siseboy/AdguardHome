@@ -159,37 +159,21 @@ function GenerateRules() {
                 if [ "${generate_mode}" == "full" ] || [ "${generate_mode}" == "lite" ]; then
                     if [ "${generate_file}" == "blackwhite" ]; then
                         for foreign_dns_task in "${!foreign_dns[@]}"; do
-                            if [ "$foreign_dns_task" -eq 0 ]; then
-                                echo "${foreign_dns[$foreign_dns_task]}" > "${file_path}"
-                            else
-                                echo "${foreign_dns[$foreign_dns_task]}" >> "${file_path}"
-                            fi
+                            echo "${foreign_dns[$foreign_dns_task]}" >> "${file_path}"
                         done
                     elif [ "${generate_file}" == "whiteblack" ]; then
                         for domestic_dns_task in "${!domestic_dns[@]}"; do
-                            if [ "$domestic_dns_task" -eq 0 ]; then
-                                echo "${domestic_dns[$domestic_dns_task]}" > "${file_path}"
-                            else
-                                echo "${domestic_dns[$domestic_dns_task]}" >> "${file_path}"
-                            fi
+                            echo "${domestic_dns[$domestic_dns_task]}" >> "${file_path}"
                         done
                     fi
                 else
                     if [ "${generate_file}" == "black" ]; then
                         for domestic_dns_task in "${!domestic_dns[@]}"; do
-                            if [ "$domestic_dns_task" -eq 0 ]; then
-                                echo "${domestic_dns[$domestic_dns_task]}" > "${file_path}"
-                            else
-                                echo "${domestic_dns[$domestic_dns_task]}" >> "${file_path}"
-                            fi
+                            echo "${domestic_dns[$domestic_dns_task]}" >> "${file_path}"
                         done
                     elif [ "${generate_file}" == "white" ]; then
                         for foreign_dns_task in "${!foreign_dns[@]}"; do
-                            if [ "$foreign_dns_task" -eq 0 ]; then
-                                echo "${foreign_dns[$foreign_dns_task]}" > "${file_path}"
-                            else
-                                echo "${foreign_dns[$foreign_dns_task]}" >> "${file_path}"
-                            fi
+                            echo "${foreign_dns[$foreign_dns_task]}" >> "${file_path}"
                         done
                     fi
                 fi
