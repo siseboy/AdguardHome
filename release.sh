@@ -240,13 +240,9 @@ function GenerateRules() {
             if [ "${dns_mode}" == "default" ]; then
                 FileName && GenerateDefaultUpstream && GenerateRulesProcess
             elif [ "${dns_mode}" == "domestic" ]; then
-                FileName && GenerateDefaultUpstream && for domestic_dns_task in "${!domestic_dns[@]}"; do
-                    GenerateRulesProcess
-                done
+                FileName && GenerateDefaultUpstream && domestic_dns_task=0 && GenerateRulesProcess
             elif [ "${dns_mode}" == "foreign" ]; then
-                FileName && GenerateDefaultUpstream && for foreign_dns_task in "${!foreign_dns[@]}"; do
-                   GenerateRulesProcess
-                done
+                FileName && GenerateDefaultUpstream && foreign_dns_task=0 && GenerateRulesProcess
             fi
         ;;
         *)
