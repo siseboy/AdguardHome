@@ -11,7 +11,7 @@
 
 # (!!!) | 向 C 及 G 列表移除域名
 (!!!)example.org
-
+(!!!)xn--wcvs22d1m.hk
 # (***) | 向 C 及 G 列表排除域名 (*.example.org & example.org)
 (***)example.org
 
